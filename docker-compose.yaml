@@ -1,9 +1,12 @@
 version: '3'
 services:
   vault:
-    build: './dev/vault'
+    container_name: vault
+    build: ./dev/vault
+    env_file: ./dev/vault/env.list
     volumes:
-      - './dev/vault:/dev/vault'
+      - ./dev/vault:/dev/vault
+      - ./app/vault:/app/vault
     ports:
       - 8200:8200
     cap_add:
