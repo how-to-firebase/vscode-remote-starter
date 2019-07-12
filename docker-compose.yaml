@@ -1,0 +1,10 @@
+version: '3'
+services:
+  vault:
+    build: './dev/vault'
+    volumes:
+      - './dev/vault:/dev/vault'
+    ports:
+      - 8200:8200
+    cap_add:
+      - IPC_LOCK
