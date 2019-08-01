@@ -30,11 +30,15 @@ Edit `./dev/vault/vault.config.json` and change the `gcs` bucket to a bucket tha
 
 ### Run Vault
 
+- Bring up just `vault` in daemon mode with `docker-compose up -d vault`
 - Connect to a running `vault` daemon with `docker exec -it vault sh`.
 - Watch daemon logs with `docker-compose logs -f vault`.
 - Get shell access to the `vault` container with `sh bin/interactive-vault.sh`.
 - Run just Vault with `sh ./bin/run-vault.sh`.
+- Access the running Vault web UI at [http://localhost:8200/](http://localhost:8200/)
 
 # Extract Secrets
+
+Make sure that `vault` is running with `docker-compose up -d vault`.
 
 Run `sh bin/vault/copy-vault-keys.sh` to extract vault keys and expand secrets to separate files within `./app/vault/`.
